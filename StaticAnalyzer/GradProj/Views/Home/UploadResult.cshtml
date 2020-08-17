@@ -1,0 +1,62 @@
+﻿@model IEnumerable<GradProj.Models.UploadResultModel>
+
+@{
+    ViewBag.Title = "UploadResult";
+}
+
+<br /><br /><br />
+
+<table class="table table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RWSMS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDPMS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OOPMG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TUG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.finalScore)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RWSMS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDPMS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OOPMG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TUG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.finalScore)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<style>
+    td, th {
+        text-align: center;
+    }
+</style>

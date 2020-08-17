@@ -1,0 +1,41 @@
+﻿@model IEnumerable<GradProj.Models.UserModel>
+
+@{
+    ViewBag.Title = "View Users";
+}
+
+<br /><h2>View Users</h2><br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InsId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MailAddress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MailAddress)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditUserInfo", new { UserId = item.UserId, InsId = item.InsId, UserName = item.UserName, MailAddress = item.MailAddress }) |
+            @Html.ActionLink("Assign Role", "CreateRole", new { UserId = item.UserId })
+        </td>
+    </tr>
+}
+
+</table>
